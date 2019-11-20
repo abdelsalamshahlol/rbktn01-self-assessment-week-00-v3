@@ -48,6 +48,12 @@
 //
 // returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
 
+/*
+	== Notes ==
+	- Function takes two params. An object and test function
+	- Returns an Array with full names of family members
+	- Use recursion
+*/
 
 
 var filterFamilyMembers = function (familyTree, truthTest) {
