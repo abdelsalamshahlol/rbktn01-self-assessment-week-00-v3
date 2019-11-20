@@ -26,7 +26,7 @@ After you complete each prompt, assign a grade to each item in the Grading Outli
 
 ### Grading Outline
 
-- [ ] filter-family-members
+- [Significant progress] filter-family-members
 
 ### Grading Scale
 

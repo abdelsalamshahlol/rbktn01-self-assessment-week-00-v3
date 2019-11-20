@@ -55,6 +55,12 @@
 	- Use recursion
 */
 
+/*
+	== Pseudocode ==
+	- Convert the object into an array
+	- Use recursion to loop through the array.length > 0
+	- Check the condition using the function
+*/
 
 var familyTree = {
     'firstName': 'Beth',
