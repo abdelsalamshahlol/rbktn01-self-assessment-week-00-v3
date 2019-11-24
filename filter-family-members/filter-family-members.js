@@ -57,9 +57,10 @@
 
 /*
 	== Pseudocode ==
-	- Convert the object into an array
-	- Use recursion to loop through the array.length > 0
-	- Check the condition using the function
+	use for in loop 
+	 if key eql to children
+	  call the func itself
+	 else run the test object
 */
 
 var familyTree = {
@@ -91,36 +92,21 @@ var livesInBerkeley = function(familyMember) {
 }
 
 var filterFamilyMembers = function(familyTree, check) {
-    var arr = Object.values(familyTree);
     var result = [];
 
-    function processArr(arr) {
-        if (arr.length === 0) {
-            return result;
-        }
-        //        console.log(arr[0], Object.assign({},arr[0]))
-        //        if(check){
-        console.log(arr[0])
-        if (Array.isArray(arr[0])) {
-            console.log(arr[0])
-            result.push(processArr(arr[0]))
-        } else {
-            if (check(arr[0])) {
-                var fullname = arr[0][1] + arr[0][2]
-                result.push(fullname)
-            }
-        }
+    if (check(familyTree)) {
+        result.push(familyTree.firstName + " " + familyTree.lastName)
+    }
 
-        return processArr(arr.slice(1));
+    familyTree = familyTree.children.length > 0 ? familyTree.children : familyTree;
+
+    console.log(familyTree)
+    for (var key in familyTree) {
+        if (check(familyTree[key])) {
+            result.push(familyTree[key].firstName + " " + familyTree[key].lastName)
+        }
 
     }
 
-    //     console.log(arr)
-
-    return processArr(arr)
+    return result;
 }
-
-console.log(filterFamilyMembers(familyTree, livesInBerkeley))
-// returns ['Beth Jr. Johnson', 'Joshie Wyattson'];
-
-
